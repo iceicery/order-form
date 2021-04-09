@@ -7,7 +7,9 @@ function FormController($scope) {
     { country: 'JPY', rate: 109.43, currentRate: 1, active: false },
   ];
   $scope.setRate = function (e) {
+    $scope.currencies.map((item) => (item.active = false));
     $scope.rate = e.rate;
+    e.active = true;
   };
   $scope.fruits = [
     {

@@ -7,10 +7,11 @@
 }
 
 .form__title {
+  font-size: 30px;
   color: #fff;
   font-family: 'Train One';
   text-align: center;
-  padding: 10px 0;
+  padding: 20px 0;
   margin: 0;
 }
 
@@ -20,19 +21,28 @@
   margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: dimgray;
-  padding: 3px;
-  font-size: 15px;
 }
 
 .form__currency-list_item {
+  padding: 3px;
+  font-size: 15px;
   color: #fff;
   text-align: center;
   font-family: 'Open', 'Sans';
+  background-color: dimgray;
 }
 
-.form__currency-list_item:visited {
-  background-color: pink;
+.form__currency-list_item:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.form__currency-list_item:active {
+  color: rgb(171, 240, 93);
+}
+
+.form__currency-list_item.active {
+  background-color: #000;
 }
 
 .form__list {

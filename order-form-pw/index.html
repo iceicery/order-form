@@ -12,16 +12,7 @@
   <body ng-app ng-controller="FormController">
     <form class="form">
       <h1 class="form__title">Fruits and Vegitables</h1>
-      <ul class="form__currency-list">
-        <li
-          class="form__currency-list_item"
-          ng-repeat="currency in currencies"
-          ng-click="setRate(currency)"
-          ng-class="{actice:currency}"
-        >
-          {{currency.country}}
-        </li>
-      </ul>
+
       <ul class="form__list">
         <li
           class="form__list-item"
@@ -31,6 +22,16 @@
         >
           <p>{{fruit.name}}</p>
           <p>{{fruit.price*rate | currency}}</p>
+        </li>
+      </ul>
+      <ul class="form__currency-list">
+        <li
+          class="form__currency-list_item"
+          ng-repeat="currency in currencies"
+          ng-click="setRate(currency)"
+          ng-class="{active:currency.active}"
+        >
+          {{currency.country}}
         </li>
       </ul>
       <div class="form__sum">
