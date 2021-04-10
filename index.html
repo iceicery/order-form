@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Order Form using AngularJS</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Train One|Cookie|Open+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body ng-app ng-controller="FormController">
+    <form class="form">
+      <h1 class="form__title">Fruits and Vegitables</h1>
+
+      <ul class="form__list">
+        <li
+          class="form__list-item"
+          ng-repeat="fruit in fruits"
+          ng-click="toggleActive(fruit)"
+          ng-class="{active:fruit.active}"
+        >
+          <p>{{fruit.name}}</p>
+          <p>{{fruit.price*rate | currency}}</p>
+        </li>
+      </ul>
+      <ul class="form__currency-list">
+        <li
+          class="form__currency-list_item"
+          ng-repeat="currency in currencies"
+          ng-click="setRate(currency)"
+          ng-class="{active:currency.active}"
+        >
+          {{currency.country}}
+        </li>
+      </ul>
+      <div class="form__sum">
+        <p>Total:</p>
+        <p>{{sum()*rate | currency}}</p>
+      </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
